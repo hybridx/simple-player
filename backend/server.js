@@ -1,5 +1,4 @@
 const express = require('express');
-const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
 require('dotenv').config();
@@ -8,16 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const MUSIC_DIR = path.join(__dirname, 'music');
 
-// CORS Configuration
-const corsOptions = {
-  origin: process.env.CORS_ORIGIN || '*',
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'Range']
-};
-
 // Middleware
-app.use(cors(corsOptions));
 app.use(express.json());
 
 // Ensure music directory exists
