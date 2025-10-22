@@ -40,8 +40,8 @@ jobs:
       - name: Create frontend .env
         working-directory: ./frontend
         run: |
-          echo "VITE_API_URL=https://your-backend-url.com" >> .env
-          echo "# Set your backend URL above for production deployment" >> .env
+          echo "VITE_API_URL=https://api.181094.xyz" >> .env
+          echo "# Production backend URL configured for HTTPS" >> .env
           cat .env
 
       - name: Restore cache
