@@ -141,6 +141,40 @@ docker run -d \\
 
 ## 🌐 Production Deployment
 
+> **⚠️ Important**: Direct GitHub Pages → VPS backend connections often fail due to HTTPS/HTTP mixed content restrictions. See deployment alternatives below.
+
+### Recommended Deployment Options
+
+#### Option 1: Same Domain Deployment (Recommended)
+Deploy both frontend and backend on the same domain using a reverse proxy:
+
+```nginx
+# Nginx configuration
+server {
+    listen 443 ssl;
+    server_name your-domain.com;
+
+    # Frontend
+    location / {
+        root /path/to/frontend/dist;
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Backend API
+    location /api/ {
+        proxy_pass http://localhost:8080/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+```
+
+#### Option 2: Serverless Deployment
+Use Vercel, Netlify, or similar platforms that support both frontend and serverless functions.
+
+#### Option 3: Full-Stack Platforms
+Deploy on platforms like Railway, Render, or Heroku that can host both components.
+
 ### Backend (VPS/Cloud)
 
 1. **Clone your repository on your VPS:**
@@ -263,9 +297,11 @@ MIT License - feel free to use this project for personal or commercial purposes.
 - Check file formats are supported
 - Verify file naming convention
 
-**CORS errors:**
-- Update `CORS_ORIGIN` in backend `.env`
-- Ensure frontend `VITE_API_URL` is correct
+**Cross-origin request issues (GitHub Pages + VPS backend):**
+- **Mixed Content Error**: GitHub Pages (HTTPS) cannot call HTTP backends
+- **Solution 1**: Use HTTPS for your backend (SSL certificate + reverse proxy)
+- **Solution 2**: Deploy both frontend and backend on the same domain
+- **Solution 3**: Use a serverless backend (Vercel/Netlify Functions)
 
 **GitHub Pages deployment fails:**
 - Verify `base` setting in `vite.config.js`
