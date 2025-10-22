@@ -1,0 +1,6 @@
+# This is a placeholder file for testing
+# In a real deployment, you would put actual audio files (.mp3, .wav, etc.) here
+#
+# Example naming:
+# The Beatles - Hey Jude.mp3
+# Queen - Bohemian Rhapsody.mp3

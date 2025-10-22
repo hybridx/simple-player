@@ -1,0 +1,137 @@
+.music-player {
+  width: 100%;
+}
+
+.track-info {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.track-info h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.track-info p {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  opacity: 0.8;
+  color: #e0e0e0;
+}
+
+.track-info small {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  color: #c0c0c0;
+}
+
+.no-track {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.no-track h3 {
+  margin: 0 0 1rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.no-track p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Customize the react-h5-audio-player */
+.rhap_container {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 15px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+  padding: 1rem !important;
+}
+
+.rhap_time {
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+
+.rhap_progress-bar {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 4px !important;
+}
+
+.rhap_progress-filled {
+  background: linear-gradient(90deg, #a8edea 0%, #fed6e3 100%) !important;
+  border-radius: 4px !important;
+}
+
+.rhap_progress-indicator {
+  background: #ffffff !important;
+  border: 2px solid rgba(168, 237, 234, 0.8) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.rhap_button-clear {
+  color: #ffffff !important;
+  transition: all 0.3s ease !important;
+}
+
+.rhap_button-clear:hover {
+  color: #a8edea !important;
+  transform: scale(1.1) !important;
+}
+
+.rhap_play-pause-button {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 50% !important;
+  transition: all 0.3s ease !important;
+}
+
+.rhap_play-pause-button:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+  transform: scale(1.05) !important;
+}
+
+.rhap_volume-bar {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 4px !important;
+}
+
+.rhap_volume-filled {
+  background: linear-gradient(90deg, #a8edea 0%, #fed6e3 100%) !important;
+  border-radius: 4px !important;
+}
+
+.rhap_volume-indicator {
+  background: #ffffff !important;
+  border: 2px solid rgba(168, 237, 234, 0.8) !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .track-info {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .track-info h2 {
+    font-size: 1.3rem;
+  }
+
+  .track-info p {
+    font-size: 1rem;
+  }
+
+  .rhap_container {
+    padding: 0.75rem !important;
+  }
+}
